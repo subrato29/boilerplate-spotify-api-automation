@@ -1,0 +1,37 @@
+{
+  "name": "spotify-api-automation",
+  "version": "1.0.0",
+  "description": "Spotify API Automation",
+  "main": "index.js",
+  "scripts": {
+    "create-redis": "docker run --name redis-mocha -d -p 6379:6379 redis:alpine",
+    "test": "node auth.js && mocha",
+    "ci": "npm run create-redis && node auth.js && mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luuizeduardo/spotify-api-automation.git"
+  },
+  "keywords": [
+    "api",
+    "spotify",
+    "mocha",
+    "chai",
+    "nodejs"
+  ],
+  "author": "Luiz Eduardo Martins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luuizeduardo/spotify-api-automation/issues"
+  },
+  "homepage": "https://github.com/luuizeduardo/spotify-api-automation#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "mocha": "^6.2.2",
+    "mochawesome": "^4.1.0",
+    "redis": "^2.8.0",
+    "request": "^2.88.0"
+  },
+  "dependencies": {}
+}
